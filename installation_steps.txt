@@ -1,0 +1,15 @@
+composer create-project --prefer-dist laravel/laravel web_app "10.*"
+
+composer require filament/filament:"^3.2" -W
+ 
+php artisan filament:install --panels
+
+php artisan vendor:publish --force --tag=livewire:assets
+
+php artisan make:filament-user
+
+php artisan make:model Transactions -m
+
+php artisan make:filament-resource Category --generate
+
+php artisan make:filament-widget StatsOverview --stats-overview
