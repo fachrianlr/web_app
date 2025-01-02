@@ -13,3 +13,16 @@ php artisan make:model Transactions -m
 php artisan make:filament-resource Category --generate
 
 php artisan make:filament-widget StatsOverview --stats-overview
+
+
+cd /path/to/your/laravel/project
+sudo chwon -R rian:rian ./
+sudo chown -R www-data:www-data storage
+sudo chown -R www-data:www-data bootstrap/cache
+sudo chown -R www-data:www-data vendor
+
+sudo find storage -type d -exec chmod 755 {} \;
+sudo find storage -type f -exec chmod 644 {} \;
+sudo find bootstrap/cache -type d -exec chmod 755 {} \;
+sudo find bootstrap/cache -type f -exec chmod 644 {} \;
+
