@@ -11,8 +11,8 @@ class CustomLogoutResponse extends BaseLogoutResponse
     public function toResponse($request): RedirectResponse
     {
         if (Filament::getCurrentPanel()->getId() != 'admin') {
-            $baseUrl = config('app.url') . "/admin";
-            return redirect()->to($baseUrl);
+            $baseLogin = url('/admin/login');
+            return redirect()->to($baseLogin);
         }
 
         return parent::toResponse($request);
