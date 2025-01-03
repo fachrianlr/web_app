@@ -51,6 +51,7 @@ class UserPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->brandName(fn() => auth()->user()?->name);
     }
 }
