@@ -17,7 +17,7 @@ class RestrictRoleAccess
                 abort(403, 'Unauthorized access');
             }
         } else if (Auth::check() && Auth::user()->role->name === 'admin') {
-            if ($request->is('user/*')) {
+            if ($request->is('user*')) {
                 abort(403, 'Unauthorized access');
             }
         }
