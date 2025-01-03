@@ -12,7 +12,7 @@ class CustomLoginResponse extends \Filament\Http\Responses\Auth\LoginResponse
     public function toResponse($request): RedirectResponse|Redirector
     {
         if (1 == 1) {
-            return redirect()->intended(Dashboard::getUrl(panel: 'user'));
+            return redirect()->intended(Dashboard::getUrl(panel: 'admin'));
         }
 
         return parent::toResponse($request);
