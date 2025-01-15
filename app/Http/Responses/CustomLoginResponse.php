@@ -2,13 +2,14 @@
 
 namespace App\Http\Responses;
 
+use Filament\Http\Responses\Auth\LoginResponse;
 use Filament\Pages\Dashboard;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\RedirectResponse;
 use Livewire\Features\SupportRedirects\Redirector;
 
-class CustomLoginResponse extends \Filament\Http\Responses\Auth\LoginResponse
+class CustomLoginResponse extends LoginResponse
 {
     public function toResponse($request): RedirectResponse|Redirector
     {
